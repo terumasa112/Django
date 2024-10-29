@@ -1,0 +1,34 @@
+{% load static %}
+
+{% comment %} 拡張子はHTMLだが、 Djangoのテンプレートなので記述が異なる {% endcomment %}
+{% comment %} コメント {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{% block title_h1 %}{% endblock %}</h1>
+        {% block header %}{% endblock %}
+        <ul>
+            <li><a href="">商品</a></li>
+            <li><a href="">カート</a></li>
+            <li><a href="">サポート</a></li>
+            <li><a href="">お問い合わせ</a></li>
+            <li><a href="">プロファイル</a></li>
+        </ul>
+
+        
+    </header>
+    <main>
+        {% block contents %}{% endblock %}
+    </main>
+    <footer></footer>
+    
+</body>
+</html>

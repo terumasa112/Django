@@ -1,12 +1,23 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>トップ</title>
-</head>
-<body>
-    <h1>空のドキュメント</h1>
-    
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% comment %} 拡張子はHTMLだが、 Djangoのテンプレートなので記述が異なる {% endcomment %}
+{% comment %} コメント {% endcomment %}
+
+{# 短いコメント #}
+
+{% block title %}トップ:Eコマース{% endblock %}
+
+{% block title_h1 %}トップ{% endblock %}
+
+{% block header%}{% endblock %}
+
+{% block contents %}
+<div>
+    <h2>ごあいさつ</h2>
+    <article>
+        <p>平素は格別のお引き立てを賜り、誠にありがとうございます。</p>
+    </article>
+</div>
+{% endblock %}
