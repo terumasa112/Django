@@ -1,0 +1,11 @@
+# バージョン管理の対象外となるファイル・フォルダを指定する
+
+# VSCodeの設定フォルダ
+.vscode/
+
+# pythonのコンパイルフォルダ
+__pycache__/
+
+# macOSで自動生成される隠しファイル(Windowsでは記載不要)
+# macOSの管理ファイル
+.DS_Store
