@@ -8,6 +8,9 @@ html {
   font-size: 16pt;
 }
 
+body {
+    background-image: url(../image/twice.png);
+}
 h1 {
     text-align: center;
     margin: 0;
