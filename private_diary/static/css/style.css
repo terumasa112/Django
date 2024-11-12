@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+html {
+  font-family: "Noto Serif JP", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-size: 16pt;
+}
+
+body {
+    background-image: url(../image/twice.png);
+}
+h1 {
+    text-align: center;
+    margin: 0;
+    background-color: mediumspringgreen;
+    color: white;
+}
+
+.menu {
+    font-size: 0.8em;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding-inline-start: 0;
+    display: flex;
+    background-color: mediumaquamarine;
+    color: antiquewhite;
+}
+
+.menu li {
+    padding: 0.4em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /*祖度側のエレメントの色を引き継ぐ*/
+
+}
+.menu {
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: inherit;
+    }
+
+    a:hover {
+        background-color: mediumspringgreen;
+    }
+}
+
+footer {
+    background-color: mediumaquamarine;
+    color: burlywood;
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    width: 99%;
+    text-align: right;
+
+    padding: 0.2em;
+}
