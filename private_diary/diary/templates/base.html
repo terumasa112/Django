@@ -24,13 +24,13 @@
         <!-- Navigation -->
         <nav>
             <div>
-                <a href="index.html">
+                <a href="{% url 'diary:index' %}">
                 <h1>PRIVATE DIARY</h1>
                 </a>
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="#">お問い合わせ</a></li>
+                    <li><a href="{% url 'diary:inquiry' %}">お問い合わせ</a></li>
                     <li><a href="#">Sign up</a></li>
                     <li><a href="#">Log in</a></li>
                 </ul>

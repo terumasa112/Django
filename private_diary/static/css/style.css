@@ -64,3 +64,18 @@ footer {
 
     padding: 0.2em;
 }
+
+form.inquiry {
+
+}
+
+form.inquiry label {
+    display: inline-block;
+    width: 10em;
+    padding-right: 1em;
+    text-align: right;
+}
+
+form.inquiry label span {
+    color: mediumspringgreen;
+}
