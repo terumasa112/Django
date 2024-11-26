@@ -1,3 +1,4 @@
+#settings_common.py
 """
 Django settings for private_diary project.
 
@@ -45,8 +46,6 @@ INSTALLED_APPS = [
     #　diaryアプリケーション内のクラス
 
     "diary.apps.DiaryConfig",
-    # accountsアプリケーション内のクラスを指定
-    "accounts.apps.AccountsConfig",
 
 ]
 
@@ -91,8 +90,7 @@ DATABASES = {
     }
 }
 
-# 
-AUTH_USER_MODEL = 'accounts.CustomUser'
+
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
@@ -178,7 +176,3 @@ LOGGING = {
         },
     }
 }    
-
-
-#開発環境なのでメールの内容をSMTPサーバへ送信せず、ターミナル上に出力する
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
