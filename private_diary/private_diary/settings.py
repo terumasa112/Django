@@ -48,6 +48,14 @@ INSTALLED_APPS = [
     # accountsアプリケーション内のクラスを指定
     "accounts.apps.AccountsConfig",
 
+    #認証用拡張機能追加
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+
+    # Django bootstrap5機能追加
+    'django_bootstrap5',
+
 ]
 
 MIDDLEWARE = [
@@ -58,6 +66,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = "private_diary.urls"
@@ -110,6 +119,37 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+
+#django-allauthで利用するdjango.contrib.sitesを使うためにサイト識別用IDを設定
+SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = (
+    'allauth.account.auth_backends.AuthenticationBackend',
+#一般ユーザー用(メールアドレス認証)
+    'django.contrib.auth.backends.ModelBackend',
+#管理サイト用(ユーザー名認証)
+)
+
+#メールアドレス認証に変更する設定
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_USERNAME_REQUIRED = True
+
+#サインアップにメールアドレス確認を挟むよう設定
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_REQUIRED = True
+
+#ログイン/ログアウト後の遷移先を設定
+LOGIN_REDIRECT_URL = 'diary:index'
+ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
+
+#ログアウトリンクのクリック一発でログアウトする設定
+ACCOUNT_LOGOUT_ON_GET = True
+
+# django-allauthが送信するメールの件名に自動付与される接頭辞をブランクにする設定
+ACCOUNT_EMAIL_SUBJECT_PREFIX =''
+
+#デフォルトメール送信元を設定
+DEFAULT_FROM_EMAIL = os.environ.get('FROM_EMAIL')
 
 
 # Internationalization
@@ -182,3 +222,4 @@ LOGGING = {
 
 #開発環境なのでメールの内容をSMTPサーバへ送信せず、ターミナル上に出力する
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
