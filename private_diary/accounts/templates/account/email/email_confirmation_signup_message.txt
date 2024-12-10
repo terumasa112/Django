@@ -1,1 +1,5 @@
-{% include "account/email/email_confirmation_message.txt" %}
+ご登録誠にあんがとございます(笑)
+登録を続けるには、以下のリンクをクリックしてください。
+{{ activate_url }}
+
+from Private Diary inc.
