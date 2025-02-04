@@ -32,6 +32,7 @@
                 <ul>
                     <li><a href="{% url 'diary:inquiry' %}">お問い合わせ</a></li>
 {% if user.is_authenticated %}
+                    <li><a href="{% url 'diary:diary_list' %}">日記一覧</a></li>
                     <li><a href="{% url 'account_logout' %}">Log out</a></li>
 {% else %}     
                     <li><a href="{% url 'account_signup' %}">Sign up</a></li>

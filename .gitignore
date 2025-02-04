@@ -9,3 +9,8 @@ __pycache__/
 # macOSで自動生成される隠しファイル(Windowsでは記載不要)
 # macOSの管理ファイル
 .DS_Store
+
+# pillowとmediaのふぉるたをGitの対象外とする
+pillow/
+# アップロードした画像を保存するディレクトリ
+media/

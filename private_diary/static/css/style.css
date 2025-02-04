@@ -79,3 +79,29 @@ form.inquiry label {
 form.inquiry label span {
     color: mediumspringgreen;
 }
+
+ul.pagination {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    font-size: 2em;
+}
+
+
+/* 現在表示されているページ番号の下に下線を引く */
+ul.pagination .active{
+    /* text-decoration: underline solid lightblue; */
+    border-bottom: solid lightblue 3px;
+}
+
+
+.diary_detail section {
+    display: flex;
+}
+
+
+.diary_detail .label {
+    width: 4em;
+}
+
+

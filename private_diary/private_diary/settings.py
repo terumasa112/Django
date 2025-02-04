@@ -223,3 +223,10 @@ LOGGING = {
 #開発環境なのでメールの内容をSMTPサーバへ送信せず、ターミナル上に出力する
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+# BASE_DIRはプロジェクトのフォルダ
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
+
+
+
